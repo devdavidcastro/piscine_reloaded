@@ -6,7 +6,7 @@
 /*   By: castro <castro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 14:35:24 by castro            #+#    #+#             */
-/*   Updated: 2026/10/19 14:36:30 by castro           ###   ########.fr       */
+/*   Updated: 2026/10/19 14:37:47 by castro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_print_numbers(void)
 {
 	write(1, "0123456789", 10);
 }
-
+/*
 int	main(void)
 {
 	ft_print_numbers();
 	return (0);
-}
+}*/
