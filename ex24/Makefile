@@ -6,7 +6,7 @@
 #    By: castro <castro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/28 11:18:38 by castro            #+#    #+#              #
-#    Updated: 2026/10/30 14:58:55 by castro           ###   ########.fr        #
+#    Updated: 2026/10/30 15:05:53 by castro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJS = ${SRCS:.c=.o}
 	${CC} ${CFLAGS} -c $< -o < ${<:.c=.o}
 
 $(NAME): ${OBJS}
-	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+	ar rcs ${NAME} ${OBJS}
 
 all:	${NAME}
 
@@ -39,6 +39,8 @@ clean:
 
 fclean: clean
 	${RM} ${NAME}
+
+re: fclean all
 
 .PHONY: all clean fclean
 
