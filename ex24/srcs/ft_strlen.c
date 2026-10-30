@@ -6,11 +6,11 @@
 /*   By: castro <castro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 16:00:16 by castro            #+#    #+#             */
-/*   Updated: 2026/10/28 11:48:36 by castro           ###   ########.fr       */
+/*   Updated: 2026/10/30 15:09:51 by castro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../includes/header.h"
 
 int	ft_strlen(char *str)
 {

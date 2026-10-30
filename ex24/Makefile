@@ -6,7 +6,7 @@
 #    By: castro <castro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/28 11:18:38 by castro            #+#    #+#              #
-#    Updated: 2026/10/30 15:05:53 by castro           ###   ########.fr        #
+#    Updated: 2026/10/30 15:08:13 by castro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS = srcs/ft_putchar.c \
 OBJS = ${SRCS:.c=.o}
 
 .c.o:
-	${CC} ${CFLAGS} -c $< -o < ${<:.c=.o}
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 $(NAME): ${OBJS}
 	ar rcs ${NAME} ${OBJS}

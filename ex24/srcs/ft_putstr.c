@@ -6,12 +6,12 @@
 /*   By: castro <castro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 15:51:32 by castro            #+#    #+#             */
-/*   Updated: 2026/10/28 11:48:40 by castro           ###   ########.fr       */
+/*   Updated: 2026/10/30 15:09:44 by castro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "header.h"
+#include "../includes/header.h"
 
 void	ft_putstr(char *str)
 {
