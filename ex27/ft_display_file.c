@@ -15,11 +15,32 @@
 
 int	ft_display_file(char *str)
 {
-	char arr[1024];
+	char	arr[1024];
+	int		num;
+	int		value;
+
+	num = open(str, O_RDONLY);
+	value = read(num, arr, 1024);
+	if (num < 0)
+		return (0);
+	while (value > 0)
+	{
+		write(1, arr, value);
+		value = read(num, arr, 1024);
+	}
+	if (value < 0)
+	{
+		close(num);
+		return (0);
+	}
+	close(num);
+	return (1);
 }
 
 int	main(int argc, char **argv)
 {
+	int	result;
+
 	if (argc < 2)
 	{
 		write(1, "File name missing.", 18);
@@ -32,7 +53,9 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		ft_display_file(argv[1]);
+		result = ft_display_file(argv[1]);
+		if (result == 0)
+			write(1, "Cannot read file.", 17);
 	}
 	return (0);
 }
