@@ -6,10 +6,9 @@
 /*   By: castro <castro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 14:06:53 by castro            #+#    #+#             */
-/*   Updated: 2026/10/22 13:16:17 by castro           ###   ########.fr       */
+/*   Updated: 2026/11/01 08:19:11 by castro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <unistd.h>
 
@@ -24,6 +23,7 @@ int	ft_strcmp(char *s1, char *s2)
 	}
 	return (s1[i] - s2[i]);
 }
+
 void	ft_putstr(char *s1)
 {
 	int	i;
@@ -38,9 +38,9 @@ void	ft_putstr(char *s1)
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	int	j;
-	char *temp;
+	int		i;
+	int		j;
+	char	*temp;
 
 	i = 1;
 	while (i < argc)

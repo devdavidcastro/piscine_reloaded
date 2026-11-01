@@ -6,7 +6,7 @@
 /*   By: castro <castro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 13:47:46 by castro            #+#    #+#             */
-/*   Updated: 2026/10/22 14:19:37 by castro           ###   ########.fr       */
+/*   Updated: 2026/11/01 08:20:32 by castro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		i++;
 	}
@@ -26,13 +26,12 @@ int	ft_strlen(char *str)
 
 char	*ft_strdup(char *src)
 {
-	int	i;
-	char *str;
+	int		i;
+	char	*str;
 
 	str = malloc(sizeof(char) * ft_strlen(src) + 1);
 	if (str == NULL)
-		return NULL;
-
+		return (NULL);
 	i = 0;
 	while (src[i])
 	{

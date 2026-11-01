@@ -6,17 +6,17 @@
 /*   By: castro <castro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 10:49:51 by castro            #+#    #+#             */
-/*   Updated: 2026/10/28 11:04:38 by castro           ###   ########.fr       */
+/*   Updated: 2026/11/01 08:28:40 by castro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT
-#define FT_POINT
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
 typedef struct point
 {
 	int	x;
 	int	y;
-} t_point;
+}	t_point;
 
 #endif
