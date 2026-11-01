@@ -21,6 +21,8 @@ int	ft_iterative_factorial(int nb)
 		return (0);
 	while (nb > 0)
 	{
+		if (num > (2147483647 / nb))
+			return (0);
 		num *= nb;
 		nb--;
 	}

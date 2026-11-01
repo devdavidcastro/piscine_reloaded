@@ -10,11 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
 void	ft_print_numbers(void)
 {
-	write(1, "0123456789", 10);
+	char	num;
+
+	num = '0';
+	while (num <= '9')
+	{
+		ft_putchar(num);
+		num++;
+	}
 }
 /*
 int	main(void)

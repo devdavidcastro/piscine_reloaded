@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -31,7 +31,7 @@ void	ft_putstr(char *s1)
 	i = 0;
 	while (s1[i])
 	{
-		write(1, &s1[i], 1);
+		ft_putchar(s1[i]);
 		i++;
 	}
 }
@@ -57,7 +57,7 @@ int	main(int argc, char **argv)
 			j++;
 		}
 		ft_putstr(argv[i]);
-		write(1, "\n", 1);
+		ft_putchar('\n');
 		i++;
 	}
 	return (0);

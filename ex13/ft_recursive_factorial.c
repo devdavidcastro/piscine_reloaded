@@ -12,20 +12,20 @@
 
 int	ft_recursive_factorial(int nb)
 {
-	if (nb < 0)
+	if (nb < 0 || nb > 12)
 		return (0);
-	if (nb < 2)
-		return (1);
+	if (nb > 1)
+		return (nb * ft_recursive_factorial(nb - 1));
 	else
-	{
-		nb *= ft_recursive_factorial(nb - 1);
-	}
-	return (nb);
+		return (1);
 }
 /*
 #include <stdio.h>
 int	main(void)
 {
+	printf("%i\n", ft_recursive_factorial(3));
 	printf("%i\n", ft_recursive_factorial(5));
+	printf("%i\n", ft_recursive_factorial(-3));
+	printf("%i\n", ft_recursive_factorial(13));
 	return (0);
 }*/
