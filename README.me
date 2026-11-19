@@ -1,81 +1,47 @@
 *This project has been created as part of the 42 curriculum by damuniz.*
 
-<div align="center">
+# Piscine Reloaded — C and Shell Fundamentals Refresher
 
-# 🏊 Piscine Reloaded
+## Description
 
-### *It's good to be back*
+**Piscine Reloaded** is a best-of of the exercises from the 42 C Piscine. Its core objective is to refresh the syntactic and semantic basics of the C language and of the Unix shell, through a series of 28 small, independent exercises (`ex00` to `ex27`), each one automatically graded by *Moulinette*.
 
-![Language](https://img.shields.io/badge/language-C-00599C?style=for-the-badge&logo=c&logoColor=white)
-![Shell](https://img.shields.io/badge/shell-sh-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
-![School](https://img.shields.io/badge/school-42-000000?style=for-the-badge&logo=42&logoColor=white)
-![Norminette](https://img.shields.io/badge/norminette-passing-success?style=for-the-badge)
+Because later 42 assignments rely heavily on these primitives, practicing them from scratch rebuilds a solid foundation: pointer manipulation, null-terminated strings, recursion, command-line arguments, explicit heap management, function pointers, and low-level file I/O through system calls.
 
-*A refresher on the fundamentals of C and the Unix shell.*
+The exercises are grouped into five areas:
 
-[Description](#-description) •
-[Instructions](#-instructions) •
-[Technical choices](#-technical-choices) •
-[Resources](#-resources)
-
-</div>
+- **Shell Basics:** File permissions, symbolic links, `find` one-liners, and network interface inspection (`ex00` to `ex05`).
+- **C Fundamentals:** Functions, loops, conditions, pointers, and arithmetic (`ex06` to `ex14`).
+- **Strings, Arguments & Memory:** Re-implementations of `strlen`, `strcmp` and `strdup`, `argv` handling, and dynamic allocation (`ex15` to `ex21`).
+- **Headers & Build System:** Macros, structures, and a `Makefile` for a static library (`ex22` to `ex24`).
+- **Advanced Topics:** Function pointers and file I/O with system calls (`ex25` to `ex27`).
 
 ---
 
-## 📖 Description
+## Instructions
 
-**Piscine Reloaded** is a "best-of" of the exercises from the 42 C Piscine. Its goal is to refresh the syntactic and semantic basics of the C language and the essential Unix shell skills: functions, loops, pointers, strings, structures, macros, Makefiles, function pointers and file I/O.
+### System Requirements
 
-The project is made of **28 small exercises** (`ex00` → `ex27`), each one in its own directory and graded automatically by *Moulinette*.
+Ensure the following tools are installed on your system before building:
 
-### 🗂️ Exercises overview
+- A C compiler (`cc`)
+- GNU `make`
+- `ar` (static library archiver, pre-installed on Linux and macOS)
+- `norminette` (42 Norm checker)
 
-| # | Exercise | Topic | Allowed functions |
-|:-:|----------|-------|-------------------|
-| 00 | `exo.tar` | Permissions, symlinks, `ls -l`, `tar` | — |
-| 01 | `z` | File creation, `cat` | — |
-| 02 | `clean` | `find` one-liner | — |
-| 03 | `find_sh.sh` | `find` + output formatting | — |
-| 04 | `MAC.sh` | Network interfaces (`ifconfig`) | — |
-| 05 | `"\?$*'MaRViN'*$?\"` | Special characters in file names | — |
-| 06 | `ft_print_alphabet` | Loops | `ft_putchar` |
-| 07 | `ft_print_numbers` | Loops | `ft_putchar` |
-| 08 | `ft_is_negative` | Conditions | `ft_putchar` |
-| 09 | `ft_ft` | Pointers | — |
-| 10 | `ft_swap` | Pointers | — |
-| 11 | `ft_div_mod` | Pointers, arithmetic | — |
-| 12 | `ft_iterative_factorial` | Iteration | — |
-| 13 | `ft_recursive_factorial` | Recursion | — |
-| 14 | `ft_sqrt` | Math, performance (< 2s) | — |
-| 15 | `ft_putstr` | Strings | `ft_putchar` |
-| 16 | `ft_strlen` | Strings | — |
-| 17 | `ft_strcmp` | Strings | — |
-| 18 | `ft_print_params` | `argc` / `argv` | `ft_putchar` |
-| 19 | `ft_sort_params` | `argv`, sorting | `ft_putchar` |
-| 20 | `ft_strdup` | Dynamic allocation | `malloc` |
-| 21 | `ft_range` | Dynamic allocation, arrays | `malloc` |
-| 22 | `ft_abs.h` | Macros | — |
-| 23 | `ft_point.h` | Structures, headers | — |
-| 24 | `Makefile` | Static library `libft.a` | — |
-| 25 | `ft_foreach` | Function pointers | — |
-| 26 | `ft_count_if` | Function pointers, string arrays | — |
-| 27 | `ft_display_file` | System calls, Makefile | `close` `open` `read` `write` |
+### Project Rules
 
-### 📏 Project rules
+| Rule                  | Description                                                                |
+|-----------------------|----------------------------------------------------------------------------|
+| Norm                  | Every `.c` and `.h` file must pass `norminette`                            |
+| Compilation flags     | All sources are compiled with `-Wall -Wextra -Werror`                      |
+| Allowed functions     | Only the functions listed in each exercise may be used                     |
+| Turn-in directory     | No extra files may be left in an exercise directory                        |
+| Shell exercises       | Must be executable with `/bin/sh`                                          |
+| `main()` function     | Only submitted when the exercise explicitly asks for a program             |
+| `ft_putchar`          | When allowed, it is provided by the evaluation (`ft_putchar.c`)            |
 
-- Every file must respect the **Norm** (checked with `norminette`).
-- Compilation flags: `-Wall -Wextra -Werror`. A program that does not compile gets **0**.
-- No extra files may be left in a turn-in directory.
-- Only the functions allowed by each exercise may be used (a forbidden function = cheating).
-- Shell exercises must be executable with `/bin/sh`.
-- `main()` is only submitted when the exercise asks for a program.
-- When `ft_putchar` is allowed, it is provided by the evaluation (`ft_putchar.c`).
-
----
-
-## 🚀 Instructions
-
-### 📁 Repository structure
+### Repository Structure
 
 ```
 .
@@ -86,7 +52,21 @@ The project is made of **28 small exercises** (`ex00` → `ex27`), each one in i
 ├── ex04/   MAC.sh
 ├── ex05/   "\?$*'MaRViN'*$?\"
 ├── ex06/   ft_print_alphabet.c
-├── ...
+├── ex07/   ft_print_numbers.c
+├── ex08/   ft_is_negative.c
+├── ex09/   ft_ft.c
+├── ex10/   ft_swap.c
+├── ex11/   ft_div_mod.c
+├── ex12/   ft_iterative_factorial.c
+├── ex13/   ft_recursive_factorial.c
+├── ex14/   ft_sqrt.c
+├── ex15/   ft_putstr.c
+├── ex16/   ft_strlen.c
+├── ex17/   ft_strcmp.c
+├── ex18/   ft_print_params.c
+├── ex19/   ft_sort_params.c
+├── ex20/   ft_strdup.c
+├── ex21/   ft_range.c
 ├── ex22/   ft_abs.h
 ├── ex23/   ft_point.h
 ├── ex24/   Makefile
@@ -95,162 +75,207 @@ The project is made of **28 small exercises** (`ex00` → `ex27`), each one in i
 └── ex27/   Makefile + sources
 ```
 
-### 🔧 Compiling a function exercise
+### Running Shell Exercises (`ex00` to `ex05`)
 
-Functions are compiled with a test `main.c` (and `ft_putchar.c` when needed):
-
-```bash
-cc -Wall -Wextra -Werror ft_putchar.c exXX/ft_function.c main.c -o test
-./test
-```
-
-### 💻 Compiling a program exercise (`ex18`, `ex19`)
-
-```bash
-cc -Wall -Wextra -Werror ft_putchar.c exXX/ft_program.c -o a.out
-./a.out arg1 arg2 arg3
-```
-
-### 🐚 Running a shell exercise
-
-```bash
+```sh
 cd ex03
 chmod +x find_sh.sh
 ./find_sh.sh | cat -e
 ```
 
-### 📚 `ex24` – Static library
+For `ex00`, the submitted `exo.tar` is created from the exercise directory with:
 
-From the exercise directory (containing `srcs/` and `includes/`):
-
-```bash
-make          # builds libft.a
-make clean    # removes object files
-make fclean   # removes object files and libft.a
-make re       # fclean + all
+```sh
+tar -cf exo.tar *
 ```
 
-### 📄 `ex27` – `ft_display_file`
+### Compiling Function Exercises (`ex06` to `ex17`, `ex20`, `ex21`, `ex25`, `ex26`)
 
-```bash
+Function exercises do not contain a `main()`. Compile them together with your own test file and, when needed, with `ft_putchar.c`:
+
+```c
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+```
+
+Build and run the example:
+
+```sh
+cc -Wall -Wextra -Werror ft_putchar.c ex06/ft_print_alphabet.c main.c -o test
+./test
+```
+
+### Compiling Program Exercises (`ex18`, `ex19`)
+
+```sh
+cc -Wall -Wextra -Werror ft_putchar.c ex19/ft_sort_params.c -o a.out
+./a.out banana apple cherry
+```
+
+### Static Library (`ex24`)
+
+Execute the `Makefile` commands from the exercise directory, which must contain the `srcs/` and `includes/` folders:
+
+| Command       | Description                                                            |
+|---------------|------------------------------------------------------------------------|
+| `make`        | Compiles the sources in `srcs/` and packages them into `libft.a`       |
+| `make clean`  | Removes generated object files (`.o`)                                  |
+| `make fclean` | Removes object files (`.o`) and the compiled `libft.a` archive         |
+| `make re`     | Cleans all build artifacts (`fclean`) and recompiles from scratch      |
+
+The library only handles the five mandatory functions of this exercise: `ft_putchar`, `ft_putstr`, `ft_strcmp`, `ft_strlen` and `ft_swap`.
+
+### File Display Program (`ex27`)
+
+```sh
 cd ex27
 make
 ./ft_display_file file.txt
 make fclean
 ```
 
-| Situation | Message (standard error) |
-|-----------|--------------------------|
-| No argument | `File name missing.` |
-| More than one argument | `Too many arguments.` |
-| File cannot be read | `Cannot read file.` |
+| Command       | Description                                                            |
+|---------------|------------------------------------------------------------------------|
+| `make`        | Compiles the program into the `ft_display_file` binary                 |
+| `make clean`  | Removes generated object files (`.o`)                                  |
+| `make fclean` | Removes object files (`.o`) and the `ft_display_file` binary           |
 
-### ✅ Norm check
+Error messages are written to the standard error output, followed by a newline:
 
-```bash
-norminette exXX/
+| Situation                 | Message                  |
+|---------------------------|--------------------------|
+| No argument given         | `File name missing.`     |
+| More than one argument    | `Too many arguments.`    |
+| File cannot be read       | `Cannot read file.`      |
+
+### Norm Check
+
+```sh
+norminette ex06 ex07 ex08
+```
+
+Shell exercises and the `Makefile` files are not checked by `norminette`.
+
+---
+
+## Exercise Reference
+
+### 1. Shell Basics
+
+| Exercise | Deliverable                  | Behavior                                                                  |
+|----------|------------------------------|---------------------------------------------------------------------------|
+| `ex00`   | `exo.tar`                    | Creates files, directories and a symlink matching a given `ls -l` output  |
+| `ex01`   | `z`                          | A file that prints `Z` followed by a newline when read with `cat`         |
+| `ex02`   | `clean`                      | One command that finds and deletes files ending in `~` or wrapped in `#`  |
+| `ex03`   | `find_sh.sh`                 | Lists every `.sh` file name (without the extension) recursively           |
+| `ex04`   | `MAC.sh`                     | Displays the machine's MAC addresses, one per line                        |
+| `ex05`   | `"\?$*'MaRViN'*$?\"`         | A file named with special characters, containing only `42`                |
+
+### 2. C Fundamentals
+
+| Function                 | Behavior                                                              |
+|--------------------------|-----------------------------------------------------------------------|
+| `ft_print_alphabet`      | Prints the lowercase alphabet on a single line, starting from `a`     |
+| `ft_print_numbers`       | Prints all digits in ascending order on a single line                 |
+| `ft_is_negative`         | Prints `N` if `n` is negative, `P` if positive or zero                |
+| `ft_ft`                  | Sets the `int` pointed to by `nbr` to `42`                            |
+| `ft_swap`                | Swaps the values of two integers through their addresses              |
+| `ft_div_mod`             | Stores `a / b` in `*div` and `a % b` in `*mod`                        |
+| `ft_iterative_factorial` | Returns the factorial of `nb` using a loop, `0` on error              |
+| `ft_recursive_factorial` | Returns the factorial of `nb` using recursion, `0` on error           |
+| `ft_sqrt`                | Returns the exact integer square root of `nb`, or `0` if it has none  |
+
+### 3. Strings, Arguments & Memory
+
+| Function          | Behavior                                                                    |
+|-------------------|-----------------------------------------------------------------------------|
+| `ft_putstr`       | Writes a string to the standard output                                      |
+| `ft_strlen`       | Reproduces `strlen`: length of a string excluding the terminating `'\0'`    |
+| `ft_strcmp`       | Reproduces `strcmp`: lexicographic comparison of two strings                |
+| `ft_print_params` | Program that prints each argument (except `argv[0]`) on its own line        |
+| `ft_sort_params`  | Program that prints its arguments in ASCII order, one per line              |
+| `ft_strdup`       | Reproduces `strdup`: duplicates a string into newly allocated memory        |
+| `ft_range`        | Allocates an `int` array from `min` (included) to `max` (excluded)          |
+
+### 4. Headers & Build System
+
+| Deliverable   | Behavior                                                                      |
+|---------------|-------------------------------------------------------------------------------|
+| `ft_abs.h`    | Defines the macro `ABS(Value)` that evaluates to the absolute value           |
+| `ft_point.h`  | Defines the `t_point` structure (fields `x` and `y`) used by a given `main`   |
+| `Makefile`    | Builds `libft.a` from `srcs/` and `includes/` with `all`, `clean`, `fclean`, `re` |
+
+`ft_point.h` must compile the following code:
+
+```c
+#include "ft_point.h"
+
+void	set_point(t_point *point)
+{
+	point->x = 42;
+	point->y = 21;
+}
+
+int	main(void)
+{
+	t_point	point;
+
+	set_point(&point);
+	return (0);
+}
+```
+
+### 5. Advanced Topics
+
+| Function / Program | Behavior                                                                   |
+|--------------------|----------------------------------------------------------------------------|
+| `ft_foreach`       | Applies a function `f` to every element of an `int` array, in order        |
+| `ft_count_if`      | Counts the strings of a `NULL`-terminated array for which `f` returns `1`  |
+| `ft_display_file`  | Prints the content of a file using only `open`, `read`, `write` and `close`|
+
+Prototypes:
+
+```c
+void	ft_foreach(int *tab, int length, void (*f)(int));
+int		ft_count_if(char **tab, int (*f)(char*));
 ```
 
 ---
 
-## 🧠 Technical choices
+## Design & Implementation Details
 
-Most exercises are intentionally small, so this section explains the algorithm and data structure chosen for the ones where a real decision was involved.
-
-<details>
-<summary><b>ex12 / ex13 – Factorial (iterative and recursive)</b></summary>
-
-- **Algorithm:** a simple loop multiplying from `2` to `nb` (iterative), and `nb * f(nb - 1)` with base case `f(0) = f(1) = 1` (recursive).
-- **Errors:** a negative `nb` returns `0`, as required by the subject.
-- **Overflow:** `13!` exceeds the range of a 32-bit `int`, so values above `12` are also treated as errors and return `0`.
-- **Justification:** both versions run in **O(n)** time. With `n ≤ 12`, the recursion depth is trivial and there is no risk of stack overflow, so both are far below the 2-second limit.
-</details>
-
-<details>
-<summary><b>ex14 – Square root</b></summary>
-
-- **Algorithm:** try integers `i = 1, 2, 3...` while `i * i <= nb`, and return `i` if `i * i == nb`, otherwise `0`.
-- **Overflow safety:** the loop is bounded by `46340` (the largest `i` such that `i * i` fits in an `int`).
-- **Justification:** the complexity is **O(√n)**, i.e. at most ~46 000 iterations for any `int`, which is instantaneous. A binary search (O(log n)) would also work, but the linear approach is simpler and less error-prone. Invalid inputs (`nb <= 0`) return `0`.
-</details>
-
-<details>
-<summary><b>ex19 – Sorting arguments</b></summary>
-
-- **Data structure:** the existing `argv` array of `char *` pointers, sorted **in place**.
-- **Algorithm:** a bubble/selection sort comparing strings with an ASCII comparison (same behavior as `strcmp`), swapping the **pointers** rather than the strings.
-- **Justification:** `malloc` is not allowed, so no copy of the arguments is made. Swapping pointers is O(1) per swap regardless of string length. The O(n²) complexity is acceptable for a command line with a handful of arguments, and the code stays short and Norm-friendly.
-</details>
-
-<details>
-<summary><b>ex20 / ex21 – Dynamic allocation</b></summary>
-
-- **`ft_strdup`:** compute the length, `malloc(len + 1)` (room for the `'\0'`), then copy character by character. Returns `NULL` if `malloc` fails.
-- **`ft_range`:** `malloc((max - min) * sizeof(int))` and fill the array from `min` (included) to `max` (excluded). Returns `NULL` if `min >= max` or if `malloc` fails.
-- **Justification:** a contiguous array gives O(1) access and a single allocation (and a single `free` for the caller), with O(n) fill time.
-</details>
-
-<details>
-<summary><b>ex22 / ex23 – Macro and header</b></summary>
-
-- **`ABS`:** a ternary expression with every parameter and the whole result wrapped in parentheses, to avoid operator-precedence surprises. Note that the argument is evaluated more than once, a known limitation of function-like macros.
-- **`ft_point.h`:** a `typedef struct` named `t_point` with `x` and `y` integer fields, protected by an include guard to prevent double inclusion.
-</details>
-
-<details>
-<summary><b>ex24 – Makefile</b></summary>
-
-- **Choice:** the source files are listed **explicitly** (`ft_putchar`, `ft_putstr`, `ft_strcmp`, `ft_strlen`, `ft_swap`) instead of using a wildcard, as the subject warns about wildcards.
-- **Structure:** objects are built from `srcs/` with `-I includes`, archived with `ar rcs libft.a`, and the rules `all`, `clean`, `fclean` and `re` are declared as `.PHONY`.
-- **Justification:** an explicit list is predictable, avoids picking up stray files, and lets `make` rebuild only what changed.
-</details>
-
-<details>
-<summary><b>ex25 / ex26 – Function pointers</b></summary>
-
-- **`ft_foreach`:** a single loop from `0` to `length - 1` calling `f(tab[i])`, preserving the array order.
-- **`ft_count_if`:** iterate over the `NULL`-terminated array of strings and increment a counter each time `f` returns `1`.
-- **Justification:** both are O(n) single-pass traversals with O(1) extra memory, and the function pointer keeps the traversal logic reusable.
-</details>
-
-<details>
-<summary><b>ex27 – ft_display_file</b></summary>
-
-- **Data structure:** a **fixed-size buffer** declared on the stack (`malloc` is forbidden).
-- **Algorithm:** `open` the file, then loop on `read` into the buffer and `write` exactly the number of bytes read to `stdout` until `read` returns `0`; finally `close` the file descriptor.
-- **Errors:** messages are written to the **standard error output** (`fd 2`) followed by a newline.
-- **Justification:** reading by chunks keeps memory usage constant regardless of file size and works for large files without dynamic allocation.
-</details>
+- **42 Norm Adherence:** Every exercise lives in its own directory and file, and helper functions needed by a single file are declared `static` when the exercise allows more than one function.
+- **Factorial Bounds (`ex12`, `ex13`):** A negative `nb` returns `0`. Since `13!` exceeds the range of a 32-bit `int`, values above `12` are also treated as errors and return `0`. Both versions run in `O(n)` time, with a recursion depth of at most 12, so there is no risk of stack overflow.
+- **Square Root Search (`ex14`):** The function tests integers `i` while `i * i <= nb` and returns `i` on an exact match. The loop is bounded by `46340`, the largest value whose square fits in an `int`, preventing signed overflow. The complexity is `O(√n)`, at most about 46 000 iterations, far below the 2-second limit.
+- **In-Place Argument Sorting (`ex19`):** Arguments are sorted directly in the `argv` array by swapping `char *` pointers instead of copying strings. This avoids any allocation (`malloc` is not allowed), makes each swap `O(1)` regardless of string length, and uses a simple comparison equivalent to `ft_strcmp`. The `O(n²)` complexity is acceptable for the small number of command-line arguments.
+- **Heap Allocation (`ex20`, `ex21`):** `ft_strdup` allocates `len + 1` bytes to hold the terminating `'\0'`. `ft_range` allocates `max - min` integers and returns `NULL` when `min >= max`. Both functions return `NULL` if `malloc` fails.
+- **Safe Macro (`ex22`):** `ABS` wraps its argument and the whole expression in parentheses to avoid operator-precedence issues. As with any function-like macro, the argument may be evaluated more than once.
+- **Include Guard (`ex23`):** `ft_point.h` is protected against double inclusion and defines `t_point` through a `typedef struct`.
+- **Explicit Source List (`ex24`):** The `Makefile` lists the five source files explicitly instead of using a wildcard, so the build is predictable and never picks up stray files. Targets such as `all`, `clean`, `fclean` and `re` are declared `.PHONY`.
+- **Function Pointers (`ex25`, `ex26`):** Both functions traverse the array in a single pass with `O(1)` extra memory, delegating the per-element behavior to the caller-supplied callback `f`.
+- **Fixed-Size Buffer (`ex27`):** Since `malloc` is forbidden, `ft_display_file` reads the file in chunks into a fixed-size array and writes exactly the number of bytes returned by `read`, until `read` returns `0`. Memory usage stays constant regardless of the file size, and error messages go to file descriptor `2`.
 
 ---
 
-## 📚 Resources
+## Resources
 
-### 🔗 References
+### References & Documentation
 
-- `man` pages: `find`, `ifconfig`, `chmod`, `ls`, `tar`, `strlen`, `strcmp`, `strdup`, `malloc`, `open`, `read`, `write`, `close`
-- [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html)
-- [42 Norm / norminette](https://github.com/42School/norminette)
-- [*The C Programming Language* – Kernighan & Ritchie](https://en.wikipedia.org/wiki/The_C_Programming_Language)
-- [Beej's Guide to C Programming](https://beej.us/guide/bgc/)
-- Peer-learning sessions with other 42 students
+- **Linux Man Pages** — Specifications for `find`, `ifconfig`, `chmod`, `ls`, `tar`, `strlen`, `strcmp`, `strdup`, `malloc`, `open`, `read`, `write` and `close`: <https://man7.org/linux/man-pages/>
+- **cppreference C Reference** — Language and standard header documentation: <https://en.cppreference.com/w/c>
+- **The C Programming Language (2nd Edition)** — Brian W. Kernighan & Dennis M. Ritchie
+- **GNU Make Documentation** — Makefile syntax, rules, and build automation: <https://www.gnu.org/software/make/manual/>
+- **42 Norm / norminette** — Coding standard and checker: <https://github.com/42School/norminette>
+- **Beej's Guide to C Programming** — Introductory guide to C: <https://beej.us/guide/bgc/>
 
-### 🤖 AI usage
+### Use of AI
 
-Following the project's AI instructions, AI was **not** used to produce the solutions of the exercises. The reasoning, the code and the tests were done by me, using the `man` pages, the references above and discussions with my peers.
+AI (Claude) was used during the project strictly as a learning aid and documentation assistant:
 
-AI was used only for the following tasks:
+- **Documentation:** Helping draft and structure this `README.md` file.
 
-| Task | Part of the project |
-|------|---------------------|
-| Writing and formatting this `README.md` | Documentation only |
-
-> ⚠️ Update this table so it reflects exactly how you used (or did not use) AI.
-
----
-
-<div align="center">
-
-*Made with ☕ and a lot of segfaults at 42.*
-
-</div>
+All C source code, shell commands and `Makefile` files were written and debugged independently by the author.
