@@ -1,0 +1,148 @@
+*This project has been created as part of the 42 curriculum by damuniz.*
+
+# Piscine Reloaded
+
+## Description
+
+**Piscine Reloaded** is a "best-of" of the exercises from the 42 C Piscine. Its goal is to refresh the syntactic and semantic basics of the C programming language, as well as the essential Unix shell skills: functions, loops, pointers, strings, structures, macros, Makefiles, function pointers and file I/O.
+
+The project is split into 28 small exercises (`ex00` to `ex27`), each one in its own directory:
+
+| Exercise | Name | Topic |
+|----------|------|-------|
+| ex00 | Oh yeah, mooore... | Files, permissions and symlinks (`ls -l`, `chmod`, `tar`) |
+| ex01 | Z | File creation (`cat`) |
+| ex02 | clean | `find` one-liner |
+| ex03 | find_sh | `find` + output formatting |
+| ex04 | MAC | Network interfaces (`ifconfig`) |
+| ex05 | Can you create it ? | Special characters in file names |
+| ex06 | ft_print_alphabet | Loops, `ft_putchar` |
+| ex07 | ft_print_numbers | Loops, `ft_putchar` |
+| ex08 | ft_is_negative | Conditions |
+| ex09 | ft_ft | Pointers |
+| ex10 | ft_swap | Pointers |
+| ex11 | ft_div_mod | Pointers, arithmetic |
+| ex12 | ft_iterative_factorial | Iteration |
+| ex13 | ft_recursive_factorial | Recursion |
+| ex14 | ft_sqrt | Math, performance (< 2 seconds) |
+| ex15 | ft_putstr | Strings |
+| ex16 | ft_strlen | Strings (`strlen`) |
+| ex17 | ft_strcmp | Strings (`strcmp`) |
+| ex18 | ft_print_params | `argc` / `argv` |
+| ex19 | ft_sort_params | `argv`, sorting (ASCII order) |
+| ex20 | ft_strdup | Dynamic allocation (`strdup`) |
+| ex21 | ft_range | Dynamic allocation, arrays |
+| ex22 | ft_abs.h | Macros |
+| ex23 | ft_point.h | Structures, headers |
+| ex24 | Makefile | Static library `libft.a`, Makefile rules |
+| ex25 | ft_foreach | Function pointers |
+| ex26 | ft_count_if | Function pointers, string arrays |
+| ex27 | display_file | System calls (`open`, `read`, `write`, `close`), Makefile |
+
+### Project rules
+
+- Every exercise must follow the **Norm** (checked with `norminette`).
+- Code is compiled with `-Wall -Wextra -Werror`. If it does not compile, the grade is 0.
+- Only the files requested in the subject may be present in each turn-in directory.
+- Only the allowed functions of each exercise may be used (using a forbidden function is considered cheating).
+- Shell exercises must be executable with `/bin/sh`.
+- A `main()` function is only submitted when the exercise asks for a program.
+- When `ft_putchar` is an allowed function, it is provided by the evaluation (`ft_putchar.c`).
+
+## Instructions
+
+### Repository structure
+
+```
+.
+├── ex00/   # exo.tar
+├── ex01/   # z
+├── ex02/   # clean
+├── ex03/   # find_sh.sh
+├── ex04/   # MAC.sh
+├── ex05/   # "\?$*'MaRViN'*$?\"
+├── ex06/   # ft_print_alphabet.c
+├── ...
+├── ex22/   # ft_abs.h
+├── ex23/   # ft_point.h
+├── ex24/   # Makefile
+├── ex25/   # ft_foreach.c
+├── ex26/   # ft_count_if.c
+└── ex27/   # Makefile + sources of ft_display_file
+```
+
+### Compilation
+
+C exercises that are **functions** are compiled together with a test `main` and a `ft_putchar.c` (when needed), using the school's flags:
+
+```bash
+cc -Wall -Wextra -Werror ft_putchar.c exXX/ft_function.c main.c -o test
+./test
+```
+
+C exercises that are **programs** (`ex18`, `ex19`):
+
+```bash
+cc -Wall -Wextra -Werror exXX/ft_program.c -o a.out
+./a.out arg1 arg2 arg3
+```
+
+### Shell exercises
+
+```bash
+cd ex03
+chmod +x find_sh.sh
+./find_sh.sh | cat -e
+```
+
+### ex24 – Makefile (`libft.a`)
+
+Run from the exercise directory, which contains the `srcs/` and `includes/` folders:
+
+```bash
+make        # builds libft.a
+make clean  # removes object files
+make fclean # removes object files and libft.a
+make re     # fclean + all
+```
+
+### ex27 – ft_display_file
+
+```bash
+cd ex27
+make
+./ft_display_file file.txt
+make fclean
+```
+
+Expected error messages (printed on the standard error output, followed by a newline):
+
+- No argument: `File name missing.`
+- More than one argument: `Too many arguments.`
+- File that cannot be read: `Cannot read file.`
+
+### Norm check
+
+```bash
+norminette -R CheckForbiddenSourceHeader exXX/
+```
+
+## Resources
+
+### References
+
+- `man` pages: `find`, `ifconfig`, `chmod`, `ls`, `tar`, `strlen`, `strcmp`, `strdup`, `malloc`, `open`, `read`, `write`, `close`
+- [The C Programming Language – Kernighan & Ritchie](https://en.wikipedia.org/wiki/The_C_Programming_Language)
+- [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html)
+- [42 Norm](https://github.com/42School/norminette)
+- Peer-learning with other 42 students
+
+### AI usage
+
+In line with the project's AI instructions, AI was **not** used to generate the solutions of the exercises. The reasoning, the code and the tests were done by me, with the help of the `man` pages, the documentation above and discussions with my peers.
+
+AI tools were used only for secondary tasks, such as:
+
+- Writing and formatting this `README.md`.
+
+<!-- Adjust this section so it reflects exactly how you used (or did not use) AI during the project. -->
