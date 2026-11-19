@@ -1,93 +1,117 @@
 *This project has been created as part of the 42 curriculum by damuniz.*
 
-# Piscine Reloaded
+<div align="center">
 
-## Description
+# 🏊 Piscine Reloaded
 
-**Piscine Reloaded** is a "best-of" of the exercises from the 42 C Piscine. Its goal is to refresh the syntactic and semantic basics of the C programming language, as well as the essential Unix shell skills: functions, loops, pointers, strings, structures, macros, Makefiles, function pointers and file I/O.
+### *It's good to be back*
 
-The project is split into 28 small exercises (`ex00` to `ex27`), each one in its own directory:
+![Language](https://img.shields.io/badge/language-C-00599C?style=for-the-badge&logo=c&logoColor=white)
+![Shell](https://img.shields.io/badge/shell-sh-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
+![School](https://img.shields.io/badge/school-42-000000?style=for-the-badge&logo=42&logoColor=white)
+![Norminette](https://img.shields.io/badge/norminette-passing-success?style=for-the-badge)
 
-| Exercise | Name | Topic |
-|----------|------|-------|
-| ex00 | Oh yeah, mooore... | Files, permissions and symlinks (`ls -l`, `chmod`, `tar`) |
-| ex01 | Z | File creation (`cat`) |
-| ex02 | clean | `find` one-liner |
-| ex03 | find_sh | `find` + output formatting |
-| ex04 | MAC | Network interfaces (`ifconfig`) |
-| ex05 | Can you create it ? | Special characters in file names |
-| ex06 | ft_print_alphabet | Loops, `ft_putchar` |
-| ex07 | ft_print_numbers | Loops, `ft_putchar` |
-| ex08 | ft_is_negative | Conditions |
-| ex09 | ft_ft | Pointers |
-| ex10 | ft_swap | Pointers |
-| ex11 | ft_div_mod | Pointers, arithmetic |
-| ex12 | ft_iterative_factorial | Iteration |
-| ex13 | ft_recursive_factorial | Recursion |
-| ex14 | ft_sqrt | Math, performance (< 2 seconds) |
-| ex15 | ft_putstr | Strings |
-| ex16 | ft_strlen | Strings (`strlen`) |
-| ex17 | ft_strcmp | Strings (`strcmp`) |
-| ex18 | ft_print_params | `argc` / `argv` |
-| ex19 | ft_sort_params | `argv`, sorting (ASCII order) |
-| ex20 | ft_strdup | Dynamic allocation (`strdup`) |
-| ex21 | ft_range | Dynamic allocation, arrays |
-| ex22 | ft_abs.h | Macros |
-| ex23 | ft_point.h | Structures, headers |
-| ex24 | Makefile | Static library `libft.a`, Makefile rules |
-| ex25 | ft_foreach | Function pointers |
-| ex26 | ft_count_if | Function pointers, string arrays |
-| ex27 | display_file | System calls (`open`, `read`, `write`, `close`), Makefile |
+*A refresher on the fundamentals of C and the Unix shell.*
 
-### Project rules
+[Description](#-description) •
+[Instructions](#-instructions) •
+[Technical choices](#-technical-choices) •
+[Resources](#-resources)
 
-- Every exercise must follow the **Norm** (checked with `norminette`).
-- Code is compiled with `-Wall -Wextra -Werror`. If it does not compile, the grade is 0.
-- Only the files requested in the subject may be present in each turn-in directory.
-- Only the allowed functions of each exercise may be used (using a forbidden function is considered cheating).
+</div>
+
+---
+
+## 📖 Description
+
+**Piscine Reloaded** is a "best-of" of the exercises from the 42 C Piscine. Its goal is to refresh the syntactic and semantic basics of the C language and the essential Unix shell skills: functions, loops, pointers, strings, structures, macros, Makefiles, function pointers and file I/O.
+
+The project is made of **28 small exercises** (`ex00` → `ex27`), each one in its own directory and graded automatically by *Moulinette*.
+
+### 🗂️ Exercises overview
+
+| # | Exercise | Topic | Allowed functions |
+|:-:|----------|-------|-------------------|
+| 00 | `exo.tar` | Permissions, symlinks, `ls -l`, `tar` | — |
+| 01 | `z` | File creation, `cat` | — |
+| 02 | `clean` | `find` one-liner | — |
+| 03 | `find_sh.sh` | `find` + output formatting | — |
+| 04 | `MAC.sh` | Network interfaces (`ifconfig`) | — |
+| 05 | `"\?$*'MaRViN'*$?\"` | Special characters in file names | — |
+| 06 | `ft_print_alphabet` | Loops | `ft_putchar` |
+| 07 | `ft_print_numbers` | Loops | `ft_putchar` |
+| 08 | `ft_is_negative` | Conditions | `ft_putchar` |
+| 09 | `ft_ft` | Pointers | — |
+| 10 | `ft_swap` | Pointers | — |
+| 11 | `ft_div_mod` | Pointers, arithmetic | — |
+| 12 | `ft_iterative_factorial` | Iteration | — |
+| 13 | `ft_recursive_factorial` | Recursion | — |
+| 14 | `ft_sqrt` | Math, performance (< 2s) | — |
+| 15 | `ft_putstr` | Strings | `ft_putchar` |
+| 16 | `ft_strlen` | Strings | — |
+| 17 | `ft_strcmp` | Strings | — |
+| 18 | `ft_print_params` | `argc` / `argv` | `ft_putchar` |
+| 19 | `ft_sort_params` | `argv`, sorting | `ft_putchar` |
+| 20 | `ft_strdup` | Dynamic allocation | `malloc` |
+| 21 | `ft_range` | Dynamic allocation, arrays | `malloc` |
+| 22 | `ft_abs.h` | Macros | — |
+| 23 | `ft_point.h` | Structures, headers | — |
+| 24 | `Makefile` | Static library `libft.a` | — |
+| 25 | `ft_foreach` | Function pointers | — |
+| 26 | `ft_count_if` | Function pointers, string arrays | — |
+| 27 | `ft_display_file` | System calls, Makefile | `close` `open` `read` `write` |
+
+### 📏 Project rules
+
+- Every file must respect the **Norm** (checked with `norminette`).
+- Compilation flags: `-Wall -Wextra -Werror`. A program that does not compile gets **0**.
+- No extra files may be left in a turn-in directory.
+- Only the functions allowed by each exercise may be used (a forbidden function = cheating).
 - Shell exercises must be executable with `/bin/sh`.
-- A `main()` function is only submitted when the exercise asks for a program.
-- When `ft_putchar` is an allowed function, it is provided by the evaluation (`ft_putchar.c`).
+- `main()` is only submitted when the exercise asks for a program.
+- When `ft_putchar` is allowed, it is provided by the evaluation (`ft_putchar.c`).
 
-## Instructions
+---
 
-### Repository structure
+## 🚀 Instructions
+
+### 📁 Repository structure
 
 ```
 .
-├── ex00/   # exo.tar
-├── ex01/   # z
-├── ex02/   # clean
-├── ex03/   # find_sh.sh
-├── ex04/   # MAC.sh
-├── ex05/   # "\?$*'MaRViN'*$?\"
-├── ex06/   # ft_print_alphabet.c
+├── ex00/   exo.tar
+├── ex01/   z
+├── ex02/   clean
+├── ex03/   find_sh.sh
+├── ex04/   MAC.sh
+├── ex05/   "\?$*'MaRViN'*$?\"
+├── ex06/   ft_print_alphabet.c
 ├── ...
-├── ex22/   # ft_abs.h
-├── ex23/   # ft_point.h
-├── ex24/   # Makefile
-├── ex25/   # ft_foreach.c
-├── ex26/   # ft_count_if.c
-└── ex27/   # Makefile + sources of ft_display_file
+├── ex22/   ft_abs.h
+├── ex23/   ft_point.h
+├── ex24/   Makefile
+├── ex25/   ft_foreach.c
+├── ex26/   ft_count_if.c
+└── ex27/   Makefile + sources
 ```
 
-### Compilation
+### 🔧 Compiling a function exercise
 
-C exercises that are **functions** are compiled together with a test `main` and a `ft_putchar.c` (when needed), using the school's flags:
+Functions are compiled with a test `main.c` (and `ft_putchar.c` when needed):
 
 ```bash
 cc -Wall -Wextra -Werror ft_putchar.c exXX/ft_function.c main.c -o test
 ./test
 ```
 
-C exercises that are **programs** (`ex18`, `ex19`):
+### 💻 Compiling a program exercise (`ex18`, `ex19`)
 
 ```bash
-cc -Wall -Wextra -Werror exXX/ft_program.c -o a.out
+cc -Wall -Wextra -Werror ft_putchar.c exXX/ft_program.c -o a.out
 ./a.out arg1 arg2 arg3
 ```
 
-### Shell exercises
+### 🐚 Running a shell exercise
 
 ```bash
 cd ex03
@@ -95,18 +119,18 @@ chmod +x find_sh.sh
 ./find_sh.sh | cat -e
 ```
 
-### ex24 – Makefile (`libft.a`)
+### 📚 `ex24` – Static library
 
-Run from the exercise directory, which contains the `srcs/` and `includes/` folders:
+From the exercise directory (containing `srcs/` and `includes/`):
 
 ```bash
-make        # builds libft.a
-make clean  # removes object files
-make fclean # removes object files and libft.a
-make re     # fclean + all
+make          # builds libft.a
+make clean    # removes object files
+make fclean   # removes object files and libft.a
+make re       # fclean + all
 ```
 
-### ex27 – ft_display_file
+### 📄 `ex27` – `ft_display_file`
 
 ```bash
 cd ex27
@@ -115,34 +139,118 @@ make
 make fclean
 ```
 
-Expected error messages (printed on the standard error output, followed by a newline):
+| Situation | Message (standard error) |
+|-----------|--------------------------|
+| No argument | `File name missing.` |
+| More than one argument | `Too many arguments.` |
+| File cannot be read | `Cannot read file.` |
 
-- No argument: `File name missing.`
-- More than one argument: `Too many arguments.`
-- File that cannot be read: `Cannot read file.`
-
-### Norm check
+### ✅ Norm check
 
 ```bash
-norminette -R CheckForbiddenSourceHeader exXX/
+norminette exXX/
 ```
 
-## Resources
+---
 
-### References
+## 🧠 Technical choices
+
+Most exercises are intentionally small, so this section explains the algorithm and data structure chosen for the ones where a real decision was involved.
+
+<details>
+<summary><b>ex12 / ex13 – Factorial (iterative and recursive)</b></summary>
+
+- **Algorithm:** a simple loop multiplying from `2` to `nb` (iterative), and `nb * f(nb - 1)` with base case `f(0) = f(1) = 1` (recursive).
+- **Errors:** a negative `nb` returns `0`, as required by the subject.
+- **Overflow:** `13!` exceeds the range of a 32-bit `int`, so values above `12` are also treated as errors and return `0`.
+- **Justification:** both versions run in **O(n)** time. With `n ≤ 12`, the recursion depth is trivial and there is no risk of stack overflow, so both are far below the 2-second limit.
+</details>
+
+<details>
+<summary><b>ex14 – Square root</b></summary>
+
+- **Algorithm:** try integers `i = 1, 2, 3...` while `i * i <= nb`, and return `i` if `i * i == nb`, otherwise `0`.
+- **Overflow safety:** the loop is bounded by `46340` (the largest `i` such that `i * i` fits in an `int`).
+- **Justification:** the complexity is **O(√n)**, i.e. at most ~46 000 iterations for any `int`, which is instantaneous. A binary search (O(log n)) would also work, but the linear approach is simpler and less error-prone. Invalid inputs (`nb <= 0`) return `0`.
+</details>
+
+<details>
+<summary><b>ex19 – Sorting arguments</b></summary>
+
+- **Data structure:** the existing `argv` array of `char *` pointers, sorted **in place**.
+- **Algorithm:** a bubble/selection sort comparing strings with an ASCII comparison (same behavior as `strcmp`), swapping the **pointers** rather than the strings.
+- **Justification:** `malloc` is not allowed, so no copy of the arguments is made. Swapping pointers is O(1) per swap regardless of string length. The O(n²) complexity is acceptable for a command line with a handful of arguments, and the code stays short and Norm-friendly.
+</details>
+
+<details>
+<summary><b>ex20 / ex21 – Dynamic allocation</b></summary>
+
+- **`ft_strdup`:** compute the length, `malloc(len + 1)` (room for the `'\0'`), then copy character by character. Returns `NULL` if `malloc` fails.
+- **`ft_range`:** `malloc((max - min) * sizeof(int))` and fill the array from `min` (included) to `max` (excluded). Returns `NULL` if `min >= max` or if `malloc` fails.
+- **Justification:** a contiguous array gives O(1) access and a single allocation (and a single `free` for the caller), with O(n) fill time.
+</details>
+
+<details>
+<summary><b>ex22 / ex23 – Macro and header</b></summary>
+
+- **`ABS`:** a ternary expression with every parameter and the whole result wrapped in parentheses, to avoid operator-precedence surprises. Note that the argument is evaluated more than once, a known limitation of function-like macros.
+- **`ft_point.h`:** a `typedef struct` named `t_point` with `x` and `y` integer fields, protected by an include guard to prevent double inclusion.
+</details>
+
+<details>
+<summary><b>ex24 – Makefile</b></summary>
+
+- **Choice:** the source files are listed **explicitly** (`ft_putchar`, `ft_putstr`, `ft_strcmp`, `ft_strlen`, `ft_swap`) instead of using a wildcard, as the subject warns about wildcards.
+- **Structure:** objects are built from `srcs/` with `-I includes`, archived with `ar rcs libft.a`, and the rules `all`, `clean`, `fclean` and `re` are declared as `.PHONY`.
+- **Justification:** an explicit list is predictable, avoids picking up stray files, and lets `make` rebuild only what changed.
+</details>
+
+<details>
+<summary><b>ex25 / ex26 – Function pointers</b></summary>
+
+- **`ft_foreach`:** a single loop from `0` to `length - 1` calling `f(tab[i])`, preserving the array order.
+- **`ft_count_if`:** iterate over the `NULL`-terminated array of strings and increment a counter each time `f` returns `1`.
+- **Justification:** both are O(n) single-pass traversals with O(1) extra memory, and the function pointer keeps the traversal logic reusable.
+</details>
+
+<details>
+<summary><b>ex27 – ft_display_file</b></summary>
+
+- **Data structure:** a **fixed-size buffer** declared on the stack (`malloc` is forbidden).
+- **Algorithm:** `open` the file, then loop on `read` into the buffer and `write` exactly the number of bytes read to `stdout` until `read` returns `0`; finally `close` the file descriptor.
+- **Errors:** messages are written to the **standard error output** (`fd 2`) followed by a newline.
+- **Justification:** reading by chunks keeps memory usage constant regardless of file size and works for large files without dynamic allocation.
+</details>
+
+---
+
+## 📚 Resources
+
+### 🔗 References
 
 - `man` pages: `find`, `ifconfig`, `chmod`, `ls`, `tar`, `strlen`, `strcmp`, `strdup`, `malloc`, `open`, `read`, `write`, `close`
-- [The C Programming Language – Kernighan & Ritchie](https://en.wikipedia.org/wiki/The_C_Programming_Language)
 - [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html)
-- [42 Norm](https://github.com/42School/norminette)
-- Peer-learning with other 42 students
+- [42 Norm / norminette](https://github.com/42School/norminette)
+- [*The C Programming Language* – Kernighan & Ritchie](https://en.wikipedia.org/wiki/The_C_Programming_Language)
+- [Beej's Guide to C Programming](https://beej.us/guide/bgc/)
+- Peer-learning sessions with other 42 students
 
-### AI usage
+### 🤖 AI usage
 
-In line with the project's AI instructions, AI was **not** used to generate the solutions of the exercises. The reasoning, the code and the tests were done by me, with the help of the `man` pages, the documentation above and discussions with my peers.
+Following the project's AI instructions, AI was **not** used to produce the solutions of the exercises. The reasoning, the code and the tests were done by me, using the `man` pages, the references above and discussions with my peers.
 
-AI tools were used only for secondary tasks, such as:
+AI was used only for the following tasks:
 
-- Writing and formatting this `README.md`.
+| Task | Part of the project |
+|------|---------------------|
+| Writing and formatting this `README.md` | Documentation only |
 
-<!-- Adjust this section so it reflects exactly how you used (or did not use) AI during the project. -->
+> ⚠️ Update this table so it reflects exactly how you used (or did not use) AI.
+
+---
+
+<div align="center">
+
+*Made with ☕ and a lot of segfaults at 42.*
+
+</div>
